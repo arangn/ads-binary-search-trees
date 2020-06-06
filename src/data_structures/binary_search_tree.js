@@ -17,18 +17,6 @@ class BinarySearchTree {
 
   insert(key, value = true) {
     // TODO
-    // current = root
-    // parent = root
-    // _________
-    // while current != null
-    // check if input is smaller/larger/equal than root
-    // parent = current
-    //  if smaller, current = current.left
-    // if larger, current = current.right
-    // compare again
-    // ________
-    // if (parent > input) parent.left = input
-    // if (parent <= input ) parent.right = input
     let input = new this.Node({key: key, value: value})
     if (!this._root) {
       this._root = input
@@ -66,17 +54,6 @@ class BinarySearchTree {
       return
     }
     return this._findNode(key).value
-    // let node = this._root;
-    //
-    // while (node) {
-    //   if (key < node.key) {
-    //     node = node.left;
-    //   } else if (key > node.key) {
-    //     node = node.right;
-    //   } else { // equal
-    //     return node.value;
-    //   }
-    // }
   }
 
   _findNode(key){
@@ -95,26 +72,6 @@ class BinarySearchTree {
 
   delete(key) {
     // TODO (tests first!)
-    // *find toDelete (3)
-    // parent = toDelete.parent()
-    // *find rightmost child of toDelete.left
-    // let rightmost = toDelete.left
-    // current = rightmost
-    // ______
-    // until (rightmost == null)
-    // current = rightmost
-    // rightmost = rightmost.right
-    // _____
-    // *current replaces toDelete
-    // rightSubtree = toDelete.right
-    // current.right = rightSubtree
-    // parent.left = current
-
-    toDelete = 4
-    parent = 6
-    rightmost = 5
-    current = null
-
     if(!this.lookup(key)) return
     let toDelete = this._findNode(key)
     let returnValue = toDelete.value
@@ -157,12 +114,6 @@ class BinarySearchTree {
       return returnValue
     }
   }
-
-  toDelete = 4
-  parent = 6
-  rightmost = null
-  current = 5
-  rightsubtree= 5
 
   count() {
     return this._count;

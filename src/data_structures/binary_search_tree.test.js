@@ -122,15 +122,9 @@ dataStructures.forEach(TargetDS => {
       });
 
       it('omits the removed record from iteration results', () => {
-        const keys = ['many', 'keys', 'for', 'this', 'tree'];
-        keys.forEach((key, i) => {
-          bst.insert(key);
-          // expect(bst.count()).toBe(2 + i);
-        });
-        // bst.insert('for', 'second value');
+        bst.insert('for', 'second value');
         bst.delete('for')
-        // expect(bst.lookup('for')).toBe(undefined)
-        expect(keys).toBe(['many', 'keys', 'this', 'tree'])
+        expect(bst.lookup('for')).toBe(undefined)
       });
 
       it('can remove every element in a tree', () => {
